@@ -5,6 +5,7 @@ import { socials } from '../constants';
 
 import styles from '../styles';
 import { footerVariants } from '../utils/motion';
+import Image from 'next/image';
 
 const Footer = () => {
   const Mailto = ({ email, subject = '', body = '', children }) => {
@@ -29,7 +30,7 @@ const Footer = () => {
         Contactez-nous
         </h4>
         <button type="button" className="flex items-center h-fit py-4 px-6 bg-[#25618B] rounded-[32px] gap-[12px]">
-          <img
+          <Image
             src="/mail.svg"
             alt="headset"
             className="w-[24px] h-[24px] object-contain"
@@ -53,12 +54,12 @@ const Footer = () => {
           <p className="font-normal text-[14px] text-white opacity-50">
             Copyright © 2023 SOMMET DIGITAL. All rights reserved.
           </p>
-
+x
           <div className="flex gap-4" >
               {socials.map((social) => (
-              <a href={social?.social ?? '#'} rel='noreferrer' target="_blank">
+              <a href={social?.social ?? '#'} rel='noreferrer' target="_blank"  key={social.name}>
                   
-              <img
+              <Image
                 key={social.name}
                 src={social.url}
                 alt={social.name}
